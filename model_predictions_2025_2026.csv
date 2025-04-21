@@ -1,0 +1,137 @@
+Specialty,Year,Model,Predicted_Ratio
+ACCS EM,2025,Linear,5.614242424242434
+ACCS EM,2026,Linear,5.97553613053617
+ACCS EM,2025,Polynomial2,8.351136362412944
+ACCS EM,2026,Polynomial2,9.97561188659165
+ACCS EM,2025,Ridge,5.5979340277777965
+ACCS EM,2026,Ridge,5.95671875000005
+ACCS EM,2025,RandomForest,6.821300000000008
+ACCS EM,2026,RandomForest,6.821300000000008
+Anaesthetics,2025,Linear,5.197878787878835
+Anaesthetics,2026,Linear,5.515501165501178
+Anaesthetics,2025,Polynomial2,7.2172727271099575
+Anaesthetics,2026,Polynomial2,8.466923076659441
+Anaesthetics,2025,Ridge,5.183541666666656
+Anaesthetics,2026,Ridge,5.4989583333333485
+Anaesthetics,2025,RandomForest,5.972299999999998
+Anaesthetics,2026,RandomForest,5.972299999999998
+Cardiothoracic Surgery,2025,Linear,30.266666666666424
+Cardiothoracic Surgery,2026,Linear,32.56397435897452
+Cardiothoracic Surgery,2025,Polynomial2,49.434772725217044
+Cardiothoracic Surgery,2026,Polynomial2,60.57889859890565
+Cardiothoracic Surgery,2025,Ridge,30.16296874999989
+Cardiothoracic Surgery,2026,Ridge,32.44432291666635
+Cardiothoracic Surgery,2025,RandomForest,39.86729999999998
+Cardiothoracic Surgery,2026,RandomForest,39.86729999999998
+Clinical Radiology,2025,Linear,8.683787878788053
+Clinical Radiology,2026,Linear,9.207703962704045
+Clinical Radiology,2025,Polynomial2,12.7809090889059
+Clinical Radiology,2026,Polynomial2,15.195804193266667
+Clinical Radiology,2025,Ridge,8.66013888888915
+Clinical Radiology,2026,Ridge,9.180416666666815
+Clinical Radiology,2025,RandomForest,10.829099999999988
+Clinical Radiology,2026,RandomForest,10.829099999999988
+Core Medical Training,2025,Linear,2.6974242424242334
+Core Medical Training,2026,Linear,2.7899766899766973
+Core Medical Training,2025,Polynomial2,4.277499999414431
+Core Medical Training,2026,Polynomial2,5.099318181135459
+Core Medical Training,2025,Ridge,2.6932465277777737
+Core Medical Training,2026,Ridge,2.78515625
+Core Medical Training,2025,RandomForest,3.3898999999999972
+Core Medical Training,2026,RandomForest,3.3898999999999972
+Core Psychiatry Training,2025,Linear,6.173484848484804
+Core Psychiatry Training,2026,Linear,6.6914568764568685
+Core Psychiatry Training,2025,Polynomial2,9.780454544757959
+Core Psychiatry Training,2026,Polynomial2,11.963181817205623
+Core Psychiatry Training,2025,Ridge,6.1501041666665515
+Core Psychiatry Training,2026,Ridge,6.664479166666524
+Core Psychiatry Training,2025,RandomForest,8.156100000000011
+Core Psychiatry Training,2026,RandomForest,8.156100000000011
+Core Surgical Training,2025,Linear,4.914939393939335
+Core Surgical Training,2026,Linear,5.175904428904346
+Core Surgical Training,2025,Polynomial2,5.338272727232834
+Core Surgical Training,2026,Polynomial2,5.794622377550695
+Core Surgical Training,2025,Ridge,4.903159722222199
+Core Surgical Training,2026,Ridge,5.1623124999999845
+Core Surgical Training,2025,RandomForest,4.9468000000000005
+Core Surgical Training,2026,RandomForest,4.9468000000000005
+General Practice,2025,Linear,2.5927272727272737
+General Practice,2026,Linear,2.7058391608391617
+General Practice,2025,Polynomial2,4.19250000003376
+General Practice,2026,Polynomial2,5.043968531477731
+General Practice,2025,Ridge,2.5876215277777703
+General Practice,2026,Ridge,2.699947916666673
+General Practice,2025,RandomForest,3.3478999999999997
+General Practice,2026,RandomForest,3.3478999999999997
+Histopathology,2025,Linear,3.885303030303021
+Histopathology,2026,Linear,4.097016317016312
+Histopathology,2025,Polynomial2,4.875681818666635
+Histopathology,2026,Polynomial2,5.544493007502751
+Histopathology,2025,Ridge,3.8757465277777783
+Histopathology,2026,Ridge,4.085989583333344
+Histopathology,2025,RandomForest,4.563800000000007
+Histopathology,2026,RandomForest,4.563800000000007
+Medical Microbiology,2025,Linear,-12.900000000000091
+Medical Microbiology,2026,Linear,-14.400000000000091
+Medical Microbiology,2025,Polynomial2,-12.949168112190364
+Medical Microbiology,2026,Polynomial2,-14.458107768952232
+Medical Microbiology,2025,Ridge,-1.3999999999999773
+Medical Microbiology,2026,Ridge,-1.8999999999999773
+Medical Microbiology,2025,RandomForest,3.9900000000000055
+Medical Microbiology,2026,RandomForest,3.9900000000000055
+Neurosurgery,2025,Linear,17.34621212121192
+Neurosurgery,2026,Linear,18.56498834498825
+Neurosurgery,2025,Polynomial2,22.534772725077346
+Neurosurgery,2026,Polynomial2,26.148269228055142
+Neurosurgery,2025,Ridge,17.291197916666988
+Neurosurgery,2026,Ridge,18.50151041666686
+Neurosurgery,2025,RandomForest,18.05690000000002
+Neurosurgery,2026,RandomForest,18.05690000000002
+Obstetrics and Gynaecology,2025,Linear,4.842727272727302
+Obstetrics and Gynaecology,2026,Linear,5.101993006993098
+Obstetrics and Gynaecology,2025,Polynomial2,7.3920454537146725
+Obstetrics and Gynaecology,2026,Polynomial2,8.82791957934387
+Obstetrics and Gynaecology,2025,Ridge,4.831024305555616
+Obstetrics and Gynaecology,2026,Ridge,5.0884895833333985
+Obstetrics and Gynaecology,2025,RandomForest,6.233800000000002
+Obstetrics and Gynaecology,2026,RandomForest,6.233800000000002
+Ophthalmology,2025,Linear,10.971969696969609
+Ophthalmology,2026,Linear,11.690221445221368
+Ophthalmology,2025,Polynomial2,15.87590909039136
+Ophthalmology,2026,Polynomial2,18.857517481781542
+Ophthalmology,2025,Ridge,10.939548611110922
+Ophthalmology,2026,Ridge,11.652812499999982
+Ophthalmology,2025,RandomForest,13.067300000000012
+Ophthalmology,2026,RandomForest,13.067300000000012
+Paediatrics,2025,Linear,2.4528787878788023
+Paediatrics,2026,Linear,2.5335780885781105
+Paediatrics,2025,Polynomial2,3.817272727523232
+Paediatrics,2026,Polynomial2,4.527692307892721
+Paediatrics,2025,Ridge,2.4492361111111336
+Paediatrics,2026,Ridge,2.529375000000016
+Paediatrics,2025,RandomForest,3.0515000000000057
+Paediatrics,2026,RandomForest,3.0515000000000057
+Public Health,2025,Linear,13.603484848484868
+Public Health,2026,Linear,14.08222610722612
+Public Health,2025,Polynomial2,15.769999999727588
+Public Health,2026,Polynomial2,17.248671328357887
+Public Health,2025,Ridge,13.581875000000082
+Public Health,2026,Ridge,14.057291666666742
+Public Health,2025,RandomForest,15.62780000000002
+Public Health,2026,RandomForest,15.62780000000002
+Community Sexual and Reproductive Health,2025,Linear,23.89127272727268
+Community Sexual and Reproductive Health,2026,Linear,24.152545454545418
+Community Sexual and Reproductive Health,2025,Polynomial2,31.14460606779903
+Community Sexual and Reproductive Health,2026,Polynomial2,35.03254546504468
+Community Sexual and Reproductive Health,2025,Ridge,23.87714987714986
+Community Sexual and Reproductive Health,2026,Ridge,24.13606879606874
+Community Sexual and Reproductive Health,2025,RandomForest,26.72659999999999
+Community Sexual and Reproductive Health,2026,RandomForest,26.72659999999999
+Oral and Maxillo Facial Surgery,2025,Linear,1.8376363636363067
+Oral and Maxillo Facial Surgery,2026,Linear,1.470272727272686
+Oral and Maxillo Facial Surgery,2025,Polynomial2,3.0761212119832635
+Oral and Maxillo Facial Surgery,2026,Polynomial2,3.327999999775784
+Oral and Maxillo Facial Surgery,2025,Ridge,1.8574938574937505
+Oral and Maxillo Facial Surgery,2026,Ridge,1.4934398034397418
+Oral and Maxillo Facial Surgery,2025,RandomForest,2.305799999999995
+Oral and Maxillo Facial Surgery,2026,RandomForest,2.305799999999995

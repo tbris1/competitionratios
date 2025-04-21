@@ -1,0 +1,193 @@
+Specialty,Applicants,Posts,Ratio,Year
+ACCS EM,534,203,2.6,2013
+Anaesthetics,1189,478,2.5,2013
+Cardiothoracic Surgery,68,6,11.3,2013
+Clinical Radiology,751,185,4.1,2013
+Core Medical Training,3088,1209,2.6,2013
+Core Psychiatry Training,650,437,1.5,2013
+Core Surgical Training,1296,676,1.9,2013
+General Practice,6447,2787,2.3,2013
+Histopathology,154,120,1.3,2013
+Medical Microbiology,108,21,5.1,2013
+Neurosurgery,183,37,4.9,2013
+Obstetrics and Gynaecology,591,204,2.9,2013
+Ophthalmology,323,71,4.5,2013
+Paediatrics,793,360,2.2,2013
+Public Health,602,70,8.6,2013
+ACCS EM,759,363,2.1,2014
+Anaesthetics,1262,595,2.1,2014
+Cardiothoracic Surgery,72,7,10.3,2014
+Clinical Radiology,798,227,3.5,2014
+Community Sexual and Reproductive Health,33,7,4.7,2014
+Core Medical Training,3065,1468,2.1,2014
+Core Psychiatry Training,643,497,1.3,2014
+Core Surgical Training,1370,625,2.2,2014
+General Practice,5477,3391,1.6,2014
+Histopathology,165,93,1.8,2014
+Medical Microbiology,50,14,3.6,2014
+Neurosurgery,159,24,6.6,2014
+Obstetrics and Gynaecology,583,240,2.4,2014
+Ophthalmology,353,82,4.3,2014
+Oral and Maxillo Facial Surgery,33,4,8.25,2014
+Paediatrics,814,435,1.9,2014
+Public Health,686,78,8.8,2014
+ACCS EM,881,363,2.43,2015
+Anaesthetics,1294,629,2.06,2015
+Cardiothoracic Surgery,68,8,8.5,2015
+Clinical Radiology,917,247,3.71,2015
+Community Sexual and Reproductive Health,100,2,50,2015
+Core Medical Training,2632,1550,1.7,2015
+Core Psychiatry Training,662,466,1.42,2015
+Core Surgical Training,1396,604,2.31,2015
+General Practice,5112,3612,1.42,2015
+Histopathology,189,79,2.39,2015
+Neurosurgery,169,30,5.63,2015
+Obstetrics and Gynaecology,599,238,2.52,2015
+Ophthalmology,374,95,3.94,2015
+Oral and Maxillo Facial Surgery,27,5,5.4,2015
+Paediatrics,801,446,1.8,2015
+Public Health,724,88,8.23,2015
+ACCS EM,760,294,2.59,2016
+Anaesthetics,1263,552,2.29,2016
+Cardiothoracic Surgery,61,6,10.17,2016
+Clinical Radiology,1074,212,5.07,2016
+Community Sexual and Reproductive Health,121,5,24.2,2016
+Core Medical Training,2516,1572,1.6,2016
+Core Surgical Training,1622,558,2.91,2016
+General Practice,4863,3790,1.28,2016
+Histopathology,209,83,2.52,2016
+Neurosurgery,169,25,6.76,2016
+Obstetrics and Gynaecology,551,181,3.04,2016
+Ophthalmology,436,90,4.84,2016
+Oral and Maxillo Facial Surgery,19,5,3.8,2016
+Paediatrics,708,411,1.72,2016
+Public Health,738,69,10.7,2016
+Core Psychiatry Training,745,490,1.52,2016
+ACCS EM,675,340,1.99,2017
+Anaesthetics,1296,601,2.16,2017
+Cardiothoracic Surgery,64,10,6.4,2017
+Clinical Radiology,1021,267,3.82,2017
+Community Sexual and Reproductive Health,99,4,24.75,2017
+Core Medical Training,2343,1657,1.41,2017
+Core Surgical Training,1608,629,2.56,2017
+General Practice,5097,3857,1.32,2017
+Histopathology,174,95,1.83,2017
+Neurosurgery,152,29,5.24,2017
+Obstetrics and Gynaecology,555,263,2.11,2017
+Ophthalmology,405,77,5.26,2017
+Oral and Maxillo Facial Surgery,20,8,2.5,2017
+Paediatrics,580,437,1.33,2017
+Public Health,718,77,9.32,2017
+Core Psychiatry Training,623,495,1.26,2017
+ACCS EM,700,369,1.9,2018
+Anaesthetics,1428,581,2.46,2018
+Cardiothoracic Surgery,90,11,8.18,2018
+Clinical Radiology,1090,291,3.75,2018
+Community Sexual and Reproductive Health,93,10,9.3,2018
+Core Medical Training,2455,1637,1.5,2018
+Core Surgical Training,1870,636,2.694,2018
+General Practice,4987,3763,1.33,2018
+Histopathology,188,102,1.84,2018
+Neurosurgery,152,34,4.47,2018
+Obstetrics and Gynaecology,511,275,1.86,2018
+Ophthalmology,378,101,3.74,2018
+Oral and Maxillo Facial Surgery,35,8,4.38,2018
+Paediatrics,585,451,1.3,2018
+Public Health,754,78,9.67,2018
+Core Psychiatry Training,754,510,1.48,2018
+ACCS EM,777,363,2.14,2019
+Anaesthetics,1333,568,2.35,2019
+Cardiothoracic Surgery,101,12,8.42,2019
+Clinical Radiology,1095,302,3.63,2019
+Community Sexual and Reproductive Health,83,7,11.86,2019
+Core Medical Training,2229,1563,1.43,2019
+Core Surgical Training,1896,648,2.93,2019
+General Practice,5166,3861,1.34,2019
+Histopathology,194,93,2.09,2019
+Neurosurgery,157,24,6.54,2019
+Obstetrics and Gynaecology,529,262,2.02,2019
+Ophthalmology,356,110,3.24,2019
+Oral and Maxillo Facial Surgery,29,7,4.14,2019
+Paediatrics,564,476,1.18,2019
+Public Health,804,86,9.35,2019
+Core Psychiatry Training,814,473,1.72,2019
+ACCS EM,863,348,2.48,2020
+Anaesthetics,1479,5694,2.6,2020
+Cardiothoracic Surgery,129,13,9.92,2020
+Clinical Radiology,1308,311,4.21,2020
+Community Sexual and Reproductive Health,108,6,18,2020
+Core Medical Training,2798,1610,1.74,2020
+Core Surgical Training,2322,605,3.84,2020
+General Practice,5770,3836,1.5,2020
+Histopathology,261,97,2.69,2020
+Neurosurgery,220,26,8.46,2020
+Obstetrics and Gynaecology,672,256,2.63,2020
+Ophthalmology,430,75,5.73,2020
+Oral and Maxillo Facial Surgery,32,10,3.2,2020
+Paediatrics,712,461,1.54,2020
+Public Health,933,77,12.12,2020
+Core Psychiatry Training,895,410,2.18,2020
+ACCS EM,1424,361,3.95,2021
+Anaesthetics,2046,566,3.61,2021
+Cardiothoracic Surgery,113,6,18.83,2021
+Clinical Radiology,1677,358,4.68,2021
+Community Sexual and Reproductive Health,167,6,27.83,2021
+Core Medical Training,3590,1567,2.29,2021
+Core Surgical Training,2528,607,4.16,2021
+General Practice,7640,4269,1.79,2021
+Histopathology,272,106,2.57,2021
+Neurosurgery,242,15,16.13,2021
+Obstetrics and Gynaecology,877,260,3.37,2021
+Ophthalmology,605,89,6.8,2021
+Oral and Maxillo Facial Surgery,53,10,5.3,2021
+Paediatrics,886,423,2.09,2021
+Public Health,988,98,10.08,2021
+Core Psychiatry Training,1513,506,2.99,2021
+ACCS EM,1606,361,4.45,2022
+Anaesthetics,2337,558,4.19,2022
+Cardiothoracic Surgery,137,7,19.57,2022
+Clinical Radiology,2231,361,6.18,2022
+Community Sexual and Reproductive Health,199,13,15.31,2022
+Core Medical Training,4008,1639,2.45,2022
+Core Surgical Training,2302,622,3.7,2022
+General Practice,8549,4137,2.07,2022
+Histopathology,286,112,2.55,2022
+Neurosurgery,255,16,15.94,2022
+Obstetrics and Gynaecology,1042,280,3.72,2022
+Ophthalmology,700,78,8.97,2022
+Oral and Maxillo Facial Surgery,34,14,2.43,2022
+Paediatrics,1075,458,2.35,2022
+Public Health,1085,95,11.42,2022
+Core Psychiatry Training,1876,484,3.88,2022
+ACCS EM,1803,361,4.99,2023
+Anaesthetics,2604,545,4.78,2023
+Cardiothoracic Surgery,298,11,27.09,2023
+Clinical Radiology,3068,350,8.77,2023
+Community Sexual and Reproductive Health,272,8,34,2023
+Core Medical Training,4406,1670,2.64,2023
+Core Surgical Training,2539,609,4.17,2023
+General Practice,10514,3935,2.67,2023
+Histopathology,380,109,3.49,2023
+Neurosurgery,255,20,12.75,2023
+Obstetrics and Gynaecology,1347,312,4.32,2023
+Ophthalmology,971,98,9.91,2023
+Oral and Maxillo Facial Surgery,38,12,3.17,2023
+Paediatrics,1231,506,2.43,2023
+Public Health,1258,124,10.15,2023
+Core Psychiatry Training,2610,524,4.98,2023
+ACCS EM,2718,359,7.57,2024
+Anaesthetics,3522,542,6.5,2024
+Cardiothoracic Surgery,408,9,45.33,2024
+Clinical Radiology,3719,312,11.92,2024
+Community Sexual and Reproductive Health,461,18,25.61,2024
+Core Medical Training,6273,1698,3.69,2024
+Core Surgical Training,3384,645,5.25,2024
+General Practice,15036,4096,3.67,2024
+Histopathology,600,119,5.04,2024
+Neurosurgery,354,18,19.67,2024
+Obstetrics and Gynaecology,2170,310,7,2024
+Ophthalmology,1383,96,14.41,2024
+Oral and Maxillo Facial Surgery,34,18,1.89,2024
+Paediatrics,1583,479,3.3,2024
+Public Health,1816,104,17.46,2024
+Core Psychiatry Training,4650,492,9.45,2024
