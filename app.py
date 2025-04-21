@@ -6,6 +6,8 @@ import plotly.graph_objects as go
 from datetime import datetime
 from sqlalchemy import insert
 from db_setup import Session, feedback_table
+# Dash app
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 # Load data
 df = pd.read_csv("CompRatios.csv")
@@ -22,9 +24,6 @@ df_predictions_long['Source'] = 'Predicted'
 
 # Combine
 combined_df = pd.concat([df, df_predictions_long], ignore_index=True)
-
-# Dash app
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 app.layout = dbc.Container([
     dbc.Row([
@@ -295,6 +294,9 @@ def submit_feedback(n_clicks, stage, usefulness, specialty, confidence, feelings
 
     return dash.no_update
 
+
+server = app.server
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run_server(debug=True)
 
