@@ -1,8 +1,10 @@
 from sqlalchemy import create_engine, Column, Integer, String, DateTime, Table, MetaData
 from sqlalchemy.orm import sessionmaker
+import os
 
+DATABASE_URL = os.environ.get("DATABASE_URL")
 
-engine = create_engine("sqlite:///feedback.db")
+engine = create_engine(DATABASE_URL)
 
 metadata = MetaData()
 
