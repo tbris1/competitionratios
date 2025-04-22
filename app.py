@@ -8,6 +8,7 @@ from sqlalchemy import insert
 from db_setup import Session, feedback_table
 # Dash app
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+app.title = "Specialty Training Competition"
 
 # Load data
 df = pd.read_csv("CompRatios.csv")
