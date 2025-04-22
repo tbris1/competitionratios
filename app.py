@@ -92,7 +92,9 @@ app.layout = dbc.Container([
                                 {"label": "Clinical Medical student (Years 4-6)", "value": "ClinicalMedicalStudent"},
                                 {"label": "FY1", "value": "FY1"},
                                 {"label": "FY2", "value": "FY2"},
-                                {"label": "Core Trainee and above", "value": "CoreTraineeAndAbove"}
+                                {"label": "FY3 / Trust grade", "value": "OOT"},
+                                {"label": "Core Trainee and above", "value": "CoreTraineeAndAbove"},
+                                {"label": "Other", "value": "Other"}
                             ],
                             inline=True,
                             className="mb-3"
