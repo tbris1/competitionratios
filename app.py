@@ -23,8 +23,13 @@ df_predictions_long = df_predictions.melt(id_vars='Specialty', var_name='Year', 
 df_predictions_long['Year'] = df_predictions_long['Year'].astype(int)
 df_predictions_long['Source'] = 'Predicted'
 
+# Create average across all specialties for each year
+df_total_ave = df.groupby('Year', as_index=False)['Ratio'].mean()
+df_total_ave['Specialty'] = 'Average (all specialties)'
+merged_df = pd.merge(df, df_total_ave, on='Year', how='left')
+
 # Combine
-combined_df = pd.concat([df, df_predictions_long], ignore_index=True)
+combined_df = pd.concat([merged_df, df_predictions_long], ignore_index=True)
 
 app.layout = dbc.Container([
     dbc.Row([
@@ -38,7 +43,7 @@ app.layout = dbc.Container([
             dcc.Dropdown(
                 id='specialty-dropdown',
                 options=[{'label': spec, 'value': spec} for spec in combined_df['Specialty'].unique()],
-                value='ACCS EM',
+                value='Average (all specialties)',
                 clearable=False
             )
         ], width=3),
@@ -116,7 +121,7 @@ app.layout = dbc.Container([
                         dbc.Checklist(
                             id="specialty-interest",
                             options=[{"label": spec, "value": spec} for spec in
-                                     sorted(combined_df["Specialty"].unique())],
+                                     sorted(combined_df["Specialty"].unique()) if spec != "Average (all specialties)"],
                             inline=False,
                             className="mb-3"
                         ),
