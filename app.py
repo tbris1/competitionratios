@@ -120,8 +120,12 @@ app.layout = dbc.Container([
                         dbc.Label("Which specialty/specialties are you most interested in?", className="fw-bold"),
                         dbc.Checklist(
                             id="specialty-interest",
-                            options=[{"label": spec, "value": spec} for spec in
-                                     sorted(combined_df["Specialty"].unique()) if spec != "Average (all specialties)"],
+                            options=[{"label": spec, "value": spec}
+                                     for spec in sorted(
+                                    [s for s in combined_df["Specialty"].unique()
+                                     if isinstance(s, str) and s != "Average (all specialties)"]
+                                )]
+                            ,
                             inline=False,
                             className="mb-3"
                         ),
