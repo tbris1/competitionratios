@@ -178,7 +178,7 @@ app.layout = dbc.Container([
             html.A("this helpful article.",
                    href="https://shonit2096.medium.com/over-fitting-in-polynomial-regression-ee67c2113344",
                    target="_blank"),
-            " The future predictions in this graph have been included primarily to demonstrate recent increases in competition ratios rather to guide decision making.",
+            " The future predictions in this graph have been included primarily to demonstrate recent trends in competition ratios rather to guide decision making.",
             html.Br(),
             "These predictions take no external factors into account. They are simply regression models based on previous competition ratio data."
         ], id='footnote1', style={'fontSize': '14px', 'color': '#393939'})
