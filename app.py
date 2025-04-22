@@ -30,6 +30,17 @@ merged_df = pd.merge(df, df_total_ave, on='Year', how='left')
 
 # Combine
 combined_df = pd.concat([merged_df, df_predictions_long], ignore_index=True)
+combined_df = combined_df[combined_df['Specialty'].notna()]
+combined_df['Specialty'] = combined_df['Specialty'].astype(str)
+
+# Remove inadvertent additional 'Specialty_x' and 'Specialty_y' columns with NaN values
+combined_df['Specialty'] = (
+    combined_df['Specialty_x']
+    .combine_first(combined_df['Specialty_y'])
+    .combine_first(combined_df['Specialty'])
+)
+
+combined_df = combined_df.drop(columns=['Specialty_x', 'Specialty_y'], errors='ignore')
 
 app.layout = dbc.Container([
     dbc.Row([
