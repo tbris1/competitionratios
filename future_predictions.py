@@ -9,12 +9,18 @@ import pandas as pd
 model = make_pipeline(PolynomialFeatures(degree=4), LinearRegression())
 
 df = pd.read_csv("CompRatios.csv")
-# df = df[df["Year"] >= 2019]
-specialties = df['Specialty'].unique()
+
+# Create 'Average (all specialties) as a 'Specialty' column - ideally should have done this earlier
+df_total_ave = df.groupby('Year', as_index=False)['Ratio'].mean()
+df_total_ave['Specialty'] = 'Average (all specialties)'
+df_total_ave['Source'] = 'Historical'
+merged_df = pd.concat([df, df_total_ave], ignore_index=True)
+
+specialties = merged_df['Specialty'].unique()
 predictions = []
 
 for spec in specialties:
-    sub_df = df[df['Specialty'] == spec]
+    sub_df = merged_df[merged_df['Specialty'] == spec]
     X = sub_df[['Year']]
     y = sub_df['Ratio']
     model.fit(X, y)

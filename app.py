@@ -10,7 +10,6 @@ from db_setup import Session, feedback_table
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 app.title = "Specialty Training Competition"
 
-# Load data
 df = pd.read_csv("CompRatios.csv")
 # For purpose of adding predicted data later, add 'Source' column
 df['Source'] = 'Historical'
@@ -26,21 +25,8 @@ df_predictions_long['Source'] = 'Predicted'
 # Create average across all specialties for each year
 df_total_ave = df.groupby('Year', as_index=False)['Ratio'].mean()
 df_total_ave['Specialty'] = 'Average (all specialties)'
-merged_df = pd.merge(df, df_total_ave, on='Year', how='left')
-
-# Combine
-combined_df = pd.concat([merged_df, df_predictions_long], ignore_index=True)
-combined_df = combined_df[combined_df['Specialty'].notna()]
-combined_df['Specialty'] = combined_df['Specialty'].astype(str)
-
-# Remove inadvertent additional 'Specialty_x' and 'Specialty_y' columns with NaN values
-combined_df['Specialty'] = (
-    combined_df['Specialty_x']
-    .combine_first(combined_df['Specialty_y'])
-    .combine_first(combined_df['Specialty'])
-)
-
-combined_df = combined_df.drop(columns=['Specialty_x', 'Specialty_y'], errors='ignore')
+df_total_ave['Source'] = 'Historical'
+merged_df = pd.concat([df, df_total_ave, df_predictions_long], ignore_index=True)
 
 app.layout = dbc.Container([
     dbc.Row([
@@ -53,7 +39,7 @@ app.layout = dbc.Container([
             html.Label("Select Specialty:", className="fw-bold"),
             dcc.Dropdown(
                 id='specialty-dropdown',
-                options=[{'label': spec, 'value': spec} for spec in combined_df['Specialty'].unique()],
+                options=[{'label': spec, 'value': spec} for spec in merged_df['Specialty'].unique()],
                 value='Average (all specialties)',
                 clearable=False
             )
@@ -63,10 +49,10 @@ app.layout = dbc.Container([
             html.Label("Select Year Range:", className="fw-bold"),
             dcc.RangeSlider(
                 id='year-slider',
-                min=int(combined_df['Year'].min()),
-                max=int(combined_df['Year'].max()),
+                min=int(merged_df['Year'].min()),
+                max=int(merged_df['Year'].max()),
                 value=[2013, 2024],
-                marks={int(year): str(year) for year in sorted(combined_df['Year'].unique())},
+                marks={int(year): str(year) for year in sorted(merged_df['Year'].unique())},
                 step=1,
                 tooltip={"placement": "bottom", "always_visible": False}
             )
@@ -133,7 +119,7 @@ app.layout = dbc.Container([
                             id="specialty-interest",
                             options=[{"label": spec, "value": spec}
                                      for spec in sorted(
-                                    [s for s in combined_df["Specialty"].unique()
+                                    [s for s in merged_df["Specialty"].unique()
                                      if isinstance(s, str) and s != "Average (all specialties)"]
                                 )]
                             ,
@@ -207,10 +193,10 @@ app.layout = dbc.Container([
     Input('year-slider', 'value')
 )
 def update_graph(selected_specialty, selected_years):
-    filtered_df = combined_df[
-        (combined_df['Specialty'] == selected_specialty) &
-        (combined_df['Year'] >= selected_years[0]) &
-        (combined_df['Year'] <= selected_years[1])
+    filtered_df = merged_df[
+        (merged_df['Specialty'] == selected_specialty) &
+        (merged_df['Year'] >= selected_years[0]) &
+        (merged_df['Year'] <= selected_years[1])
     ]
 
     historical = filtered_df[filtered_df['Source'] == 'Historical']
