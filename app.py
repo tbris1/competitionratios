@@ -6,9 +6,42 @@ import plotly.graph_objects as go
 from datetime import datetime
 from sqlalchemy import insert
 from db_setup import Session, feedback_table
+
+GA_TRACKING_CODE = """
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-223CESF5SH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-223CESF5SH');
+</script>
+"""
+
 # Dash app
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
-app.title = "Specialty Training Competition"
+
+app.index_string = f"""
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Specialty Training Competition Dashboard</title>
+        {GA_TRACKING_CODE}
+        {{%metas%}}
+        {{%favicon%}}
+        {{%css%}}
+    </head>
+    <body>
+        {{%app_entry%}}
+        <footer>
+            {{%config%}}
+            {{%scripts%}}
+            {{%renderer%}}
+        </footer>
+    </body>
+</html>
+"""
 
 df = pd.read_csv("CompRatios.csv")
 # For purpose of adding predicted data later, add 'Source' column
