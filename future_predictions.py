@@ -2,19 +2,20 @@ import sklearn
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.pipeline import make_pipeline
+from data import merged_df
 from sklearn.linear_model import Ridge
 from sklearn.ensemble import RandomForestRegressor
 import pandas as pd
 
 model = make_pipeline(PolynomialFeatures(degree=4), LinearRegression())
 
-df = pd.read_csv("CompRatios.csv")
-
-# Create 'Average (all specialties) as a 'Specialty' column - ideally should have done this earlier
-df_total_ave = df.groupby('Year', as_index=False)['Ratio'].mean()
-df_total_ave['Specialty'] = 'Average (all specialties)'
-df_total_ave['Source'] = 'Historical'
-merged_df = pd.concat([df, df_total_ave], ignore_index=True)
+# df = pd.read_csv("CompRatios.csv")
+#
+# # Create 'Average (all specialties) as a 'Specialty' column - ideally should have done this earlier
+# df_total_ave = df.groupby('Year', as_index=False)['Ratio'].mean()
+# df_total_ave['Specialty'] = 'Average (all specialties)'
+# df_total_ave['Source'] = 'Historical'
+# merged_df = pd.concat([df, df_total_ave, outliers_removed], ignore_index=True)
 
 specialties = merged_df['Specialty'].unique()
 predictions = []
