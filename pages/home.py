@@ -22,8 +22,10 @@ layout = dbc.Container([
                 value='Average (all specialties)',
                 clearable=False
             )
-        ], width=3),
+        ], xs=12, md=8, lg=6)
+    ], justify="center", className="mb-3"),
 
+    dbc.Row([
         dbc.Col([
             html.Label("Select Year Range:", className="fw-bold"),
             dcc.RangeSlider(
@@ -41,11 +43,8 @@ layout = dbc.Container([
                 step=1,
                 tooltip={"placement": "bottom", "always_visible": False}
             )
-        ], width=8),
-        html.Br(),
-        html.Br(),
-        html.Br()
-        ]),
+        ], xs=12, md=8, lg=6)
+    ], justify="center", className="mb-4"),
 
     dbc.Row([
         dbc.Col([

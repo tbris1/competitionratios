@@ -5,7 +5,7 @@ import pandas as pd
 import plotly.graph_objects as go
 from datetime import datetime
 from sqlalchemy import insert
-from db_setup import Session, feedback_table
+# from db_setup import Session, feedback_table
 from data import merged_df
 
 app = dash.Dash(
@@ -113,8 +113,8 @@ def update_graph(selected_specialty, selected_years):
     fig.update_layout(
         title=f"<b>Competition Ratio for {selected_specialty}</b>",
         title_x=0.5,
-        height=520,
-        margin=dict(l=60, r=40, t=60, b=60),
+        height=560,
+        margin=dict(l=60, r=40, t=60, b=20),
         plot_bgcolor='white',
         paper_bgcolor='#f9f9f9',
         font=dict(family="Arial", size=14, color='black'),
@@ -133,6 +133,15 @@ def update_graph(selected_specialty, selected_years):
             linecolor='black',
             showline=True,
             ticks='outside'
+        ),
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=-0.35,
+            xanchor="center",
+            x=0.5,
+            title=None,
+            font=dict(size=14)
         ),
         hovermode='x unified'
 
@@ -161,21 +170,21 @@ def submit_feedback(n_clicks, stage, usefulness, specialty, confidence, feelings
             print("Collected inputs:",
                   stage, usefulness, specialty_str, confidence, feelings, suggestions)
 
-            session = Session()
-
-            stmt = insert(feedback_table).values(
-                timestamp=timestamp,
-                training_stage=stage or "",
-                usefulness=usefulness or 0,
-                specialty=specialty_str,
-                confidence=confidence or 0,
-                feelings=feelings or "",
-                suggestions=suggestions or ""
-            )
-
-            session.execute(stmt)
-            session.commit()
-            session.close()
+            # session = Session()
+            #
+            # stmt = insert(feedback_table).values(
+            #     timestamp=timestamp,
+            #     training_stage=stage or "",
+            #     usefulness=usefulness or 0,
+            #     specialty=specialty_str,
+            #     confidence=confidence or 0,
+            #     feelings=feelings or "",
+            #     suggestions=suggestions or ""
+            # )
+            #
+            # session.execute(stmt)
+            # session.commit()
+            # session.close()
 
             return dbc.Alert("✅ Thanks for submitting your feedback!", color='success')
 
@@ -202,5 +211,5 @@ def toggle_popup(n_intervals, n_clicks, is_open):
 server = app.server
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run(debug=True)
 
