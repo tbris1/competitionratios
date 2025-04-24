@@ -5,7 +5,7 @@ import pandas as pd
 import plotly.graph_objects as go
 from datetime import datetime
 from sqlalchemy import insert
-# from db_setup import Session, feedback_table
+from db_setup import Session, feedback_table
 from data import merged_df
 
 app = dash.Dash(
@@ -60,9 +60,22 @@ app.layout = dbc.Container([
 @app.callback(
     Output('competition-graph', 'figure'),
     Input('specialty-dropdown', 'value'),
-    Input('year-slider', 'value')
+    Input('year-slider-desktop', 'value'),
+    # Input('year-slider-mobile', 'value')
 )
-def update_graph(selected_specialty, selected_years):
+def update_graph(selected_specialty, selected_years_desktop):
+
+    # trigger = ctx.triggered_id
+    #
+    # if trigger == 'years-slider mobile' and selected_years_mobile:
+    #     selected_years = selected_years_mobile
+    # elif trigger == 'year-slider-desktop' and selected_years_desktop:
+    #     selected_years = selected_years_desktop
+    # else:
+    #     selected_years = selected_years_mobile if selected_years_desktop is None else selected_years_desktop
+
+    selected_years = selected_years_desktop
+
     filtered_df = merged_df[
         (merged_df['Specialty'] == selected_specialty) &
         (merged_df['Year'] >= selected_years[0]) &
@@ -111,10 +124,15 @@ def update_graph(selected_specialty, selected_years):
     ))
 
     fig.update_layout(
-        title=f"<b>Competition Ratio for {selected_specialty}</b>",
+        title=dict(
+            text=f"<b>Competition Ratio for: {selected_specialty}</b>",
+            x=0.5,
+            xanchor='center',
+            font=dict(size=16)
+        ),
         title_x=0.5,
         height=560,
-        margin=dict(l=60, r=40, t=60, b=20),
+        margin=dict(l=60, r=40, t=80, b=20),
         plot_bgcolor='white',
         paper_bgcolor='#f9f9f9',
         font=dict(family="Arial", size=14, color='black'),
@@ -170,21 +188,21 @@ def submit_feedback(n_clicks, stage, usefulness, specialty, confidence, feelings
             print("Collected inputs:",
                   stage, usefulness, specialty_str, confidence, feelings, suggestions)
 
-            # session = Session()
-            #
-            # stmt = insert(feedback_table).values(
-            #     timestamp=timestamp,
-            #     training_stage=stage or "",
-            #     usefulness=usefulness or 0,
-            #     specialty=specialty_str,
-            #     confidence=confidence or 0,
-            #     feelings=feelings or "",
-            #     suggestions=suggestions or ""
-            # )
-            #
-            # session.execute(stmt)
-            # session.commit()
-            # session.close()
+            session = Session()
+
+            stmt = insert(feedback_table).values(
+                timestamp=timestamp,
+                training_stage=stage or "",
+                usefulness=usefulness or 0,
+                specialty=specialty_str,
+                confidence=confidence or 0,
+                feelings=feelings or "",
+                suggestions=suggestions or ""
+            )
+
+            session.execute(stmt)
+            session.commit()
+            session.close()
 
             return dbc.Alert("✅ Thanks for submitting your feedback!", color='success')
 
@@ -211,5 +229,5 @@ def toggle_popup(n_intervals, n_clicks, is_open):
 server = app.server
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run_server(debug=True)
 
