@@ -22,12 +22,15 @@ layout = dbc.Container([
                 value='Average (all specialties)',
                 clearable=False
             )
-        ], width=3),
+        ], xs=12, md=8, lg=6)
+    ], justify="center", className="mb-3"),
 
+    dbc.Row([
         dbc.Col([
             html.Label("Select Year Range:", className="fw-bold"),
+            # Desktop slider
             dcc.RangeSlider(
-                id='year-slider',
+                id='year-slider-desktop',
                 min=int(merged_df['Year'].min()),
                 max=int(merged_df['Year'].max()),
                 value=[2013, 2024],
@@ -36,16 +39,32 @@ layout = dbc.Container([
                         "label": str(year),
                         "style": {"color": "#000000", "fontWeight": "bold"} if year in [2025, 2026] else {}
                     }
-                    for year in sorted(merged_df['Year'].unique())
+                    for year in sorted(merged_df['Year'].unique()) if year % 2 == 0
                 },
                 step=1,
                 tooltip={"placement": "bottom", "always_visible": False}
-            )
-        ], width=8),
-        html.Br(),
-        html.Br(),
-        html.Br()
-        ]),
+                # className="d-none d-md-block"
+            ),
+            # # Mobile slider
+            # dcc.RangeSlider(
+            #     id='year-slider-mobile',
+            #     min=int(merged_df['Year'].min()),
+            #     max=int(merged_df['Year'].max()),
+            #     value=[2013, 2024],
+            #     marks={
+            #         int(year): {
+            #             "label": str(year),
+            #             "style": {"color": "#000000", "fontWeight": "bold"} if year in [2026] else {}
+            #         }
+            #         for year in sorted(merged_df['Year'].unique()) if year % 2 == 0
+            #     },
+            #     step=1,
+            #     tooltip={"placement": "bottom", "always_visible": False},
+            #     className="d-block d-md-none",
+            # )
+
+        ], xs=12, md=8, lg=6)
+    ], justify="center"),
 
     dbc.Row([
         dbc.Col([
@@ -152,7 +171,7 @@ layout = dbc.Container([
     dcc.Interval(id="popup-timer", interval=30000, max_intervals=1),
     dbc.Modal([
         dbc.ModalHeader("Got 15 seconds to give some feedback? 📋"),
-        dbc.ModalBody("Help us turn this into a QIP by filling out the super-quick feedback form below."),
+        dbc.ModalBody("Help us turn this into a QIP by filling out the super-quick feedback form below the graph."),
         dbc.ModalFooter([
             dbc.Button("Dismiss", id="close-popup", className="ms-2", color="secondary")
         ])

@@ -60,9 +60,22 @@ app.layout = dbc.Container([
 @app.callback(
     Output('competition-graph', 'figure'),
     Input('specialty-dropdown', 'value'),
-    Input('year-slider', 'value')
+    Input('year-slider-desktop', 'value'),
+    # Input('year-slider-mobile', 'value')
 )
-def update_graph(selected_specialty, selected_years):
+def update_graph(selected_specialty, selected_years_desktop):
+
+    # trigger = ctx.triggered_id
+    #
+    # if trigger == 'years-slider mobile' and selected_years_mobile:
+    #     selected_years = selected_years_mobile
+    # elif trigger == 'year-slider-desktop' and selected_years_desktop:
+    #     selected_years = selected_years_desktop
+    # else:
+    #     selected_years = selected_years_mobile if selected_years_desktop is None else selected_years_desktop
+
+    selected_years = selected_years_desktop
+
     filtered_df = merged_df[
         (merged_df['Specialty'] == selected_specialty) &
         (merged_df['Year'] >= selected_years[0]) &
@@ -111,10 +124,15 @@ def update_graph(selected_specialty, selected_years):
     ))
 
     fig.update_layout(
-        title=f"<b>Competition Ratio for {selected_specialty}</b>",
+        title=dict(
+            text=f"<b>Competition Ratio for: {selected_specialty}</b>",
+            x=0.5,
+            xanchor='center',
+            font=dict(size=16)
+        ),
         title_x=0.5,
-        height=520,
-        margin=dict(l=60, r=40, t=60, b=60),
+        height=560,
+        margin=dict(l=60, r=40, t=80, b=20),
         plot_bgcolor='white',
         paper_bgcolor='#f9f9f9',
         font=dict(family="Arial", size=14, color='black'),
@@ -133,6 +151,15 @@ def update_graph(selected_specialty, selected_years):
             linecolor='black',
             showline=True,
             ticks='outside'
+        ),
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=-0.35,
+            xanchor="center",
+            x=0.5,
+            title=None,
+            font=dict(size=14)
         ),
         hovermode='x unified'
 
