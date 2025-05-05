@@ -75,7 +75,7 @@ layout = dbc.Container([
     dbc.Row([
         dbc.Col([
             dbc.Card([
-                dbc.CardHeader(html.H4("📣 We'd Love Your Feedback", className="mb-0 text-primary"), id='survey'),
+                dbc.CardHeader(html.H4("We'd Love Your Feedback", className="mb-0 text-primary"), id='survey'),
                 dbc.CardBody([
                     dbc.Form([
                         # Training stage
