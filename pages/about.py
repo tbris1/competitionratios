@@ -27,10 +27,16 @@ layout = dbc.Card([
             html.H5("Who's the nerd behind this?", className="mt-4", style={"fontStyle": "italic"}),
             html.Span("Thanks for asking. I'm "),
             html.A("Tom", href="https://www.linkedin.com/in/tom-brisk/", target="_blank"),
-            html.Span(" - an FY2 in the north of England. I've started to enjoy dabbling in a bit of data science "),
-            html.I("- weird, I know..."),
+            html.Span(" - a Clinical Teaching Fellow interested in data science "),
+            html.I("- weird, I know... "),
             html.Br(),
-            html.Span(" Any queries / issues / concerns to be directed to tombrisk@gmail.com.")
+            html.Br(),
+            html.Span("This actually started as a project for a data science course, but friends and colleagues seem to have found it vaguely useful / interesting, so I decided to publish it as this website you now see before you. "),
+            html.Span("Visualising data is really important, and it's often done badly. "),
+            html.Span("I don't claim to be an expert, but hopefully this dashboard brings the competition ratio data to life a bit better than disparate tables on the NHS website."),
+            html.Br(),
+            html.Br(),
+            html.Span(" Any queries / issues / concerns to be directed to me via the LinkedIn link above.")
         ]),
 
         html.H5("Technical Notes", className="mt-4"),
@@ -52,14 +58,14 @@ layout = dbc.Card([
             "The data used is taken from "),
         html.A("NHS England", href="https://medical.hee.nhs.uk/medical-training-recruitment/medical-specialty-training/competition-ratios", target="_blank"),
         html.Span(" for competition ratios at ST1 / CT1 level. "
-            "The future predictions are from a polynomial regression model (degree 4). These predictions are purely to illustrate "
+            "The future predictions are from a polynomial regression model (degree 2) based on the data from 2021-2025. These predictions are purely to illustrate "
             "recent trends rather than to guide or influence decision making. "
-            "Polynomial regression can model complex, nonlinear relationships, but using high-degree polynomials on small datasets often"
+            "Polynomial regression can model complex, nonlinear relationships, but using polynomials on small datasets often"
             " leads to overfitting. For a deeper explanation, see "),
         html.A("this helpful article.", href="https://developers.google.com/machine-learning/crash-course/overfitting/overfitting", target="_blank"),
         html.Span(" Future competition ratios will almost certainly be "
             "very different to the predictions shown here due to the political nature of training place numbers. I will update the page with "
-            "2025 data when it is released."
+            "2026 data when it is released."
         ),
         html.P(""),
 

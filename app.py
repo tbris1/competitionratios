@@ -84,7 +84,7 @@ def update_graph(selected_specialty, selected_years_desktop):
 
     historical = filtered_df[filtered_df['Source'] == 'Historical']
     historical = historical.sort_values('Year')
-    predicted = filtered_df[(filtered_df['Source'] == 'Predicted') | (filtered_df['Year'] == 2024)]
+    predicted = filtered_df[(filtered_df['Source'] == 'Predicted') | (filtered_df['Year'] == 2025)]
     predicted = predicted.sort_values('Year')
 
     fig = go.Figure()

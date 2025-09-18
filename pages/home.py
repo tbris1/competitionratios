@@ -33,7 +33,7 @@ layout = dbc.Container([
                 id='year-slider-desktop',
                 min=int(merged_df['Year'].min()),
                 max=int(merged_df['Year'].max()),
-                value=[2013, 2024],
+                value=[2013, 2025],
                 marks={
                     int(year): {
                         "label": str(year),
@@ -170,8 +170,8 @@ layout = dbc.Container([
     ]),
     dcc.Interval(id="popup-timer", interval=30000, max_intervals=1),
     dbc.Modal([
-        dbc.ModalHeader("Got 15 seconds to give some feedback? 📋"),
-        dbc.ModalBody("Help us turn this into a QIP by filling out the super-quick feedback form below the graph."),
+        dbc.ModalHeader("Got 15 seconds to give some feedback?"),
+        dbc.ModalBody("Fill out the super-quick feedback form below the graph. Thanks!"),
         dbc.ModalFooter([
             dbc.Button("Dismiss", id="close-popup", className="ms-2", color="secondary")
         ])

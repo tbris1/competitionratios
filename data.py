@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv("CompRatios.csv")
+df = pd.read_csv("CompRatios_staging_2025.csv")
 # For purpose of adding predicted data later, add 'Source' column
 df['Source'] = 'Historical'
 # Rename core medical training
@@ -8,8 +8,10 @@ df.loc[df['Specialty'] == 'Core Medical Training', 'Specialty'] = 'Core Medical 
 
 # Load and reshape predictions
 df_predictions = pd.read_csv("predictions.csv")
-df_predictions.rename(columns={'Predicted_Ratio_2025': 2025, 'Predicted_Ratio_2026': 2026}, inplace=True)
-# Melt df as currently in wrong format [[Specialty, Predictions for 2025, Predictions for 2026]]
+# drop the 2025 prediction column now that actual 2025 data being added
+df_predictions = df_predictions.drop(columns=["Predicted_Ratio_2025"], errors="ignore")
+df_predictions.rename(columns={'Predicted_Ratio_2026': 2026}, inplace=True)
+# Melt df as currently in wrong format [[Specialty, Predictions for 2026]]
 df_predictions_long = df_predictions.melt(id_vars='Specialty', var_name='Year', value_name='Ratio')
 df_predictions_long['Year'] = df_predictions_long['Year'].astype(int)
 df_predictions_long['Source'] = 'Predicted'
