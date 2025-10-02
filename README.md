@@ -1,23 +1,64 @@
-Thanks for using this dashboard. 
-The "UK Specialty Training Competition Ratios" dashboard was designed by Dr Tom Brisk as part of a project for a "Clinical Data Science" course. 
-Any queries should be directed to tombrisk@gmail.com.
+# UK Specialty Training Competition Ratios Dashboard  
 
-This dashboard is designed primarily to demonstrate the trends in competition for a UK specialty training place and make 
-visualising the data easier than reading through tables on separate NHS webpages.
-It has not been designed to make any political points, nor has it been designed to guide career choices.
+**[EDITED 02/10/2026 TO INCLUDE INFO ON 2025 COMPETITION RATIO DATA]**
 
-Data collected via the feedback form may be used as part of a publication in the future. 
-The project and data collection has been discussed with a member of the local NHS trust's research team who 
-has agreed that ethics approval is not needed.
+---
 
-Technical notes: 
+## Overview  
+The UK Specialty Training Competition Ratios Dashboard was designed by Dr Tom Brisk as part of a Clinical Data Science course.  
 
-"Average (outliers removed)", has been calculated by removing any values with fewer than 100 applicants and then 
-applying a basic statistical technique of removing values less than or greater than 1.5 * the interquartile range to remove outliers. A mean has then been calculated across all specialties remaining for each year.
+This dashboard aims to:  
+- Demonstrate trends in competition for UK specialty training posts (ST1/CT1 level).  
+- Make visualisation easier than reading through separate NHS tables.  
 
-The data used is taken from NHS England for competition ratios at ST1 / CT1 level. The future predictions are from a polynomial regression model (4 degrees). These predictions are purely to illustrate recent trends rather than to guide or influence decision making. 
-Future competition ratios will almost certainly be very different to the predictions shown here due to the political nature of the problem.
-I will update the page with 2025 data when it is released.
+It has **not** been designed to:  
+- Make political statements.  
+- Guide individual career choices.  
 
-"Oxbridge" competition ratios refer to average competition ratios for entry to an 
-undergraduate course at the universities of Oxbridge and Cambridge (6:1). 
+---
+
+## Contact  
+For any queries, please contact: **tombrisk@gmail.com**  
+
+---
+
+## Ethics  
+Data collected via the feedback form may be used in future publications.
+
+This project and data collection were reviewed by a member of the local NHS trust’s research team, who confirmed that ethics approval was not required.  
+
+---
+
+## Technical Notes  
+
+### 1. Average Calculations  
+- **Average (outliers removed):**  
+  - Values with fewer than 100 applicants excluded.  
+  - Outliers removed using *1.5 × interquartile range* rule.  
+  - Mean calculated across remaining specialties for each year.  
+
+- **Average (all specialties):**  
+  - Simple mean of all specialty competition ratios per year.  
+  - Not weighted by applicant numbers (so niche, competitive specialties may skew results).  
+  - Differs from some published averages, which calculate:  
+
+    ```
+    Mean = Total Applicants / Total Posts
+    ```  
+
+  - This project opts for a mean of individual competition ratios, as it better reflects demand for high-interest specialties rather than assuming applicants would accept any specialty post.  
+
+---
+
+### 2. Predictions  
+- Future predictions are generated with a 2nd-degree polynomial regression model using the previous five years of data.  
+- **Important disclaimer:**  
+  - Predictions are for illustration only.  
+  - They should **not** be used to guide decisions.  
+  - Actual ratios will almost certainly differ due to political and workforce factors.  
+- The dashboard will be updated with 2026 data when released (likely ~Sep 2026).  
+
+---
+
+### 3. Oxbridge Comparison  
+“Oxbridge” competition ratios refer to the average entry ratio for undergraduate courses at the Universities of Oxford and Cambridge (~6:1). This is included as a point of comparison. It's a bit silly, really. But I found it somewhat interesting.  
