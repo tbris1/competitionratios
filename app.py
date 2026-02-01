@@ -219,11 +219,15 @@ def submit_feedback(n_clicks, stage, usefulness, specialty, confidence, feelings
     [dash.State("feedback-popup", "is_open")]
 )
 def toggle_popup(n_intervals, n_clicks, is_open):
+    return False
+    """
+    feedback popup - commented out as no longer wanted
     if n_clicks:
         return False
     if n_intervals:
         return True
     return is_open
+    """
 
 
 server = app.server
