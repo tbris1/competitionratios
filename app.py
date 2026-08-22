@@ -105,10 +105,10 @@ def update_graph(selected_specialty, selected_years_desktop):
         x=predicted['Year'],
         y=predicted['Ratio'],
         mode='lines+markers',
-        name='Predicted',
+        name='Future trend',
         line=dict(color='#1f77b4', width=3, dash='dot'),
         marker=dict(size=6, symbol='circle-open'),
-        hovertemplate="Year: %{x}<br>Predicted: %{y}<extra></extra>"
+        hovertemplate="Year: %{x}<br>Trend projection: %{y}<extra></extra>"
     ))
 
     # Add Oxbridge line
